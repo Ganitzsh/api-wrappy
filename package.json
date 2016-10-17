@@ -1,5 +1,5 @@
 {
-  "name": "wrappy",
+  "name": "api-wrappy",
   "version": "1.0.0",
   "description": "Just a simple flexible webservice wrapper",
   "main": "wrappy.js",
@@ -20,5 +20,10 @@
     "eslint": "^3.5.0",
     "eslint-plugin-babel": "^3.3.0"
   },
-  "author": "Julien Ganichot"
+  "license": "MIT",
+  "author": "Julien Ganichot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ganitzsh/wrappy.git"
+  }
 }

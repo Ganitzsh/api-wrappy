@@ -72,4 +72,4 @@ class Wrappy {
   }
 }
 
-export default Uniwrap;
+export default Wrappy;

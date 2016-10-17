@@ -3,7 +3,7 @@
 ## Install
 
 ```
-npm install --save wrappy
+npm install --save api-wrappy
 ```
 
 ## Define
@@ -37,7 +37,7 @@ const def = {
 
 ```javascript
 // app.config.js
-import Wrappy from 'wrappy'; // wrapper inside node_modules
+import Wrappy from 'api-wrappy'; // wrapper inside node_modules
 
 import def from './def.js';
 

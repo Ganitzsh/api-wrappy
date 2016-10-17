@@ -14,14 +14,14 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Uniwrap = function () {
-  function Uniwrap(definition) {
-    _classCallCheck(this, Uniwrap);
+var Wrappy = function () {
+  function Wrappy(definition) {
+    _classCallCheck(this, Wrappy);
 
     this.def = definition ? definition : instance.def;
   }
 
-  _createClass(Uniwrap, [{
+  _createClass(Wrappy, [{
     key: 'buildUrl',
     value: function () {
       var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(name, params) {
@@ -189,7 +189,7 @@ var Uniwrap = function () {
     }()
   }]);
 
-  return Uniwrap;
+  return Wrappy;
 }();
 
-exports.default = Uniwrap;
+exports.default = Wrappy;
