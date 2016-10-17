@@ -1,6 +1,6 @@
 {
   "name": "api-wrappy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Just a simple flexible webservice wrapper",
   "main": "wrappy.js",
   "scripts": {
