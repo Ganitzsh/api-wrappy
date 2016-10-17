@@ -14,11 +14,16 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+if (process.env.NODE_ENV === 'test') {
+  console.log('test');
+  var fetch = require('node-fetch');
+}
+
 var Wrappy = function () {
   function Wrappy(definition) {
     _classCallCheck(this, Wrappy);
 
-    this.def = definition ? definition : instance.def;
+    this.def = definition;
   }
 
   _createClass(Wrappy, [{
@@ -68,7 +73,7 @@ var Wrappy = function () {
   }, {
     key: 'createRequest',
     value: function () {
-      var _ref2 = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(url, name, params) {
+      var _ref2 = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(name, params) {
         var init;
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
@@ -81,15 +86,14 @@ var Wrappy = function () {
                 };
 
                 if (this.def.routes[name].contentType) {
-                  init.headers = {
-                    'Content-Type': this.def.routes[name].contentType
-                  };
+                  init.headers['Content-Type'] = this.def.routes[name].contentType;
                 }
                 if (params && params.body && this.def.routes[name].method !== 'get') {
                   init.body = params.body;
                 }
                 console.log(init);
-                return _context2.abrupt('return', new Request(url, init));
+                // return new Request(url, init);
+                return _context2.abrupt('return', init);
 
               case 5:
               case 'end':
@@ -99,7 +103,7 @@ var Wrappy = function () {
         }, _callee2, this);
       }));
 
-      function createRequest(_x3, _x4, _x5) {
+      function createRequest(_x3, _x4) {
         return _ref2.apply(this, arguments);
       }
 
@@ -123,7 +127,7 @@ var Wrappy = function () {
         }, _callee3, this);
       }));
 
-      function callMultiple(_x6) {
+      function callMultiple(_x5) {
         return _ref3.apply(this, arguments);
       }
 
@@ -155,11 +159,13 @@ var Wrappy = function () {
               case 4:
                 url = _context4.sent;
                 _context4.next = 7;
-                return this.createRequest(url, name, params);
+                return this.createRequest(name, params);
 
               case 7:
                 req = _context4.sent;
-                return _context4.abrupt('return', fetch(req).then(function (response) {
+
+                console.log(url);
+                return _context4.abrupt('return', fetch(url, req).then(function (response) {
                   if (!response.ok) {
                     console.log(response);
                     throw new Error('Request error: status is '); // TODO: add status
@@ -172,7 +178,7 @@ var Wrappy = function () {
                   }
                 }));
 
-              case 9:
+              case 10:
               case 'end':
                 return _context4.stop();
             }
@@ -180,7 +186,7 @@ var Wrappy = function () {
         }, _callee4, this);
       }));
 
-      function call(_x7, _x8) {
+      function call(_x6, _x7) {
         return _ref4.apply(this, arguments);
       }
 

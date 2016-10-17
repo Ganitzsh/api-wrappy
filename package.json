@@ -5,7 +5,8 @@
   "main": "wrappy.js",
   "scripts": {
     "build": "babel src -d dist",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "test": "npm run build && NODE_ENV='test' node dist/test.js"
   },
   "dependencies": {
     "babel-preset-es2015": "^6.14.0",
