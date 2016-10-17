@@ -1,3 +1,3 @@
-import Wrappy from './uniwrap';
+import Wrappy from './wrappy';
 
 export default Wrappy;
