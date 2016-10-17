@@ -76,23 +76,21 @@ var Wrappy = function () {
               case 0:
                 init = {
                   method: this.def.routes[name].method,
-                  mode: 'cors'
+                  mode: 'cors',
+                  headers: _extends({}, params.headers)
                 };
 
-                if (params && !params.headers) {
-                  params.headers = {}; // To avoid dealing with null values later
-                }
                 if (this.def.routes[name].contentType) {
-                  init.headers = _extends({
+                  init.headers = {
                     'Content-Type': this.def.routes[name].contentType
-                  }, params.headers);
+                  };
                 }
                 if (params && params.body && this.def.routes[name].method !== 'get') {
                   init.body = params.body;
                 }
                 return _context2.abrupt('return', new Request(url, init));
 
-              case 5:
+              case 4:
               case 'end':
                 return _context2.stop();
             }
