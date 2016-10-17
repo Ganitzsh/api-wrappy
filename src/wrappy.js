@@ -34,9 +34,7 @@ class Wrappy {
       headers: { ...params.headers },
     };
     if (this.def.routes[name].contentType) {
-      init.headers = {
-        'Content-Type': this.def.routes[name].contentType,
-      };
+      init.headers['Content-Type'] = this.def.routes[name].contentType;
     }
     if (params && params.body && this.def.routes[name].method !== 'get') {
       init.body = params.body;
