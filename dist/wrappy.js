@@ -88,9 +88,10 @@ var Wrappy = function () {
                 if (params && params.body && this.def.routes[name].method !== 'get') {
                   init.body = params.body;
                 }
+                console.log(init);
                 return _context2.abrupt('return', new Request(url, init));
 
-              case 4:
+              case 5:
               case 'end':
                 return _context2.stop();
             }
