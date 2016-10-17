@@ -1,3 +1,3 @@
 import Wrappy from './uniwrap';
 
-export default Uniwrap;
+export default Wrappy;
