@@ -1,5 +1,11 @@
 # Uniwrap
 
+## Install
+
+```
+npm install --save wrappy
+```
+
 ## Define
 
 ```javascript
