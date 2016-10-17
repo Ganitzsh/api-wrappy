@@ -31,14 +31,11 @@ class Wrappy {
     const init = {
       method: this.def.routes[name].method,
       mode: 'cors',
+      headers: { ...params.headers },
     };
-    if (params && !params.headers) {
-      params.headers = {}; // To avoid dealing with null values later
-    }
     if (this.def.routes[name].contentType) {
       init.headers = {
         'Content-Type': this.def.routes[name].contentType,
-        ...params.headers, // <-- Especially here
       };
     }
     if (params && params.body && this.def.routes[name].method !== 'get') {
